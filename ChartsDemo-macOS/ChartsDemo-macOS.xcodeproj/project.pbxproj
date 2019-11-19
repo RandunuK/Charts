@@ -166,6 +166,7 @@
 				TargetAttributes = {
 					65B3F63D1C73B4F5000983D0 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = LBRK643CC2;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 					};
@@ -372,7 +373,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LBRK643CC2;
 				INFOPLIST_FILE = "$(SRCROOT)/ChartsDemo-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dcg.ChartsDemo-OSX";
@@ -390,7 +391,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LBRK643CC2;
 				INFOPLIST_FILE = "$(SRCROOT)/ChartsDemo-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dcg.ChartsDemo-OSX";
