@@ -267,12 +267,12 @@ open class CircularRadarChartRenderer: LineRadarRenderer
     
     open override func drawExtras(context: CGContext)
     {
-        drawWeb(context: context)
+        drawCircularWeb(context: context)
     }
     
     private var _webLineSegmentsBuffer = [CGPoint](repeating: CGPoint(), count: 2)
     
-    @objc open func drawWeb(context: CGContext)
+    @objc open func drawCircularWeb(context: CGContext)
     {
         guard
             let chart = chart,
@@ -320,20 +320,28 @@ open class CircularRadarChartRenderer: LineRadarRenderer
         
         for j in 0 ..< labelCount
         {
-            for i in 0 ..< data.entryCount
-            {
-                let r = CGFloat(chart.yAxis.entries[j] - chart.chartYMin) * factor
+            //newly add part for circle
+            let r = CGFloat(chart.yAxis.entries[j] - chart.chartYMin) * factor
+            let centerCircle = CGPoint(x: center.x, y: center.y)
+            let radiusCircle = r
+            context.addArc(center: centerCircle, radius: radiusCircle, startAngle: 0.0, endAngle: .pi * 2.0, clockwise: true)
+            context.strokePath()
+            
+            //removed because of the circular path
+            //for i in 0 ..< data.entryCount
+            //{
+                //let r = CGFloat(chart.yAxis.entries[j] - chart.chartYMin) * factor
 
-                let p1 = center.moving(distance: r, atAngle: sliceangle * CGFloat(i) + rotationangle)
-                let p2 = center.moving(distance: r, atAngle: sliceangle * CGFloat(i + 1) + rotationangle)
+                //let p1 = center.moving(distance: r, atAngle: sliceangle * CGFloat(i) + rotationangle)
+                //let p2 = center.moving(distance: r, atAngle: sliceangle * CGFloat(i + 1) + rotationangle)
                 
-                _webLineSegmentsBuffer[0].x = p1.x
-                _webLineSegmentsBuffer[0].y = p1.y
-                _webLineSegmentsBuffer[1].x = p2.x
-                _webLineSegmentsBuffer[1].y = p2.y
+                //_webLineSegmentsBuffer[0].x = p1.x
+                //_webLineSegmentsBuffer[0].y = p1.y
+                //_webLineSegmentsBuffer[1].x = p2.x
+                //_webLineSegmentsBuffer[1].y = p2.y
                 
-                context.strokeLineSegments(between: _webLineSegmentsBuffer)
-            }
+                //context.strokeLineSegments(between: _webLineSegmentsBuffer)
+            //}
         }
         
         context.restoreGState()
@@ -472,4 +480,24 @@ open class CircularRadarChartRenderer: LineRadarRenderer
 
         return element
     }
+    
+    //override func draw(_ rect: CGRect) {
+        // Get the Graphics Context
+       // if let context = UIGraphicsGetCurrentContext() {
+            
+            // Set the circle outerline-width
+           // context.setLineWidth(5.0);
+            
+            // Set the circle outerline-colour
+            //UIColor.red.set()
+            
+            // Create Circle
+            //let center = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
+            //let radius = (frame.size.width - 10)/2
+            //context.addArc(center: center, radius: radius, startAngle: 0.0, endAngle: .pi * 2.0, clockwise: true)
+                
+            // Draw
+            //context.strokePath()
+       // }
+   // }
 }

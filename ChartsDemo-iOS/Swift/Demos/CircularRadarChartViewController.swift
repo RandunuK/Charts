@@ -24,7 +24,7 @@ class CircularRadarChartViewController: DemoBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "Radar Chart"
+        self.title = "Circular Radar Chart"
         self.options = [.toggleValues,
                         .toggleHighlight,
                         .toggleHighlightCircle,
@@ -135,7 +135,7 @@ class CircularRadarChartViewController: DemoBaseViewController {
         set1.drawHighlightCircleEnabled = true
         set1.setDrawHighlightIndicators(false)
         
-        let set2 = RadarChartDataSet(entries: entries2, label: "This Week")
+        let set2 = RadarChartDataSet(entries: entries2, label: "Next Week")
         set2.setColor(UIColor(red: 121/255, green: 162/255, blue: 175/255, alpha: 1))
         set2.fillColor = UIColor(red: 121/255, green: 162/255, blue: 175/255, alpha: 1)
         set2.drawFilledEnabled = true

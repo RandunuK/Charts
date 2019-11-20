@@ -26,6 +26,7 @@
 #import "CandleStickChartViewController.h"
 #import "CubicLineChartViewController.h"
 #import "RadarChartViewController.h"
+#import "CircularRadarChartViewController.h"
 #import "ColoredLineChartViewController.h"
 #import "SinusBarChartViewController.h"
 #import "PositiveNegativeBarChartViewController.h"
@@ -49,6 +50,11 @@
     self.title = @"Charts Demonstration";
 
     self.itemDefs = @[
+                      @{
+                          @"title": @"Circular Radar Chart",
+                          @"subtitle": @"Shows a LineChart with different background and line color.",
+                          @"class": CircularRadarChartViewController.class
+                        },
                       @{
                           @"title": @"Line Chart",
                           @"subtitle": @"A simple demonstration of the linechart.",
